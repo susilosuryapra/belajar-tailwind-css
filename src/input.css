@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* menambahkan font local custom  */
+  @font-face {
+    font-family: "Druk Wide Bold";
+    src: url("../public/fonts/Druk\ Wide\ Bold.woff") format("woff");
+  }
+
+  /* apapun dalam tag html akan punya font family roboto */
+  html {
+    font-family: roboto;
+  }
+
+  /* tag h1 akan memiliki font family Druk Wide Bold mengoverwrite styling tag html */
+  h1 {
+    font-family: "Druk Wide Bold";
+  }
+}
+
+/* apapun yang ada di input.css akan langsung diterapkan ke html selayaknya file css pada umumnya
+sedangkan apapun yang ada di file tailwind.config.js hanya diterapkan apabila kita memanggilnya dalam class */
