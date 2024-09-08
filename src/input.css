@@ -5,20 +5,22 @@
 @layer base {
   /* menambahkan font local custom  */
   @font-face {
-    font-family: "Druk Wide Bold";
-    src: url("../public/fonts/Druk\ Wide\ Bold.woff") format("woff");
+    font-family: "Circular STD";
+    src: url("../public/font/Circular\ Std\ Bold.woff") format("woff");
   }
 
-  /* apapun dalam tag html akan punya font family roboto */
+  /* apapun dalam tag html akan punya font family inter */
   html {
-    font-family: roboto;
+    font-family: inter;
   }
 
-  /* tag h1 akan memiliki font family Druk Wide Bold mengoverwrite styling tag html */
+  /* tag h1 akan memiliki font family circular STD mengoverwrite styling tag html */
   h1 {
-    font-family: "Druk Wide Bold";
+    font-family: Circular STD;
   }
 }
 
 /* apapun yang ada di input.css akan langsung diterapkan ke html selayaknya file css pada umumnya
-sedangkan apapun yang ada di file tailwind.config.js hanya diterapkan apabila kita memanggilnya dalam class */
+sedangkan apapun yang ada di file tailwind.config.js hanya diterapkan apabila kita memanggilnya dalam class
+ternyata font yang sudah dipanggil dengan input.css tidak usah dipanggil lagi di tailwind.config.js
+*/

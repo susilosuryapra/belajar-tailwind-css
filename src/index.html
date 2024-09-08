@@ -9,18 +9,162 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
 
     <!-- Import styling Tailwind termasuk font -->
     <link href="./output.css" rel="stylesheet" />
+
+    <!-- AlpineJS -->
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body>
-    <h1 class="text-6xl">Hello World!</h1>
-    <h1 class="text-6xl text-cinnabar">Hello World! warna Cinnabar</h1>
-    <p>Ini paragraf</p>
-    <p class="text-orchid">Paragraf warna orchid</p>
-    <p class="text-cinnabar">Paragraf warna cinnabar</p>
+    <nav class="py-9 px-4" x-data="{navOpen : false}">
+      <div class="container mx-auto">
+        <div class="flex items-center justify-between">
+          <img
+            src="../public/assets/logo.svg"
+            alt=""
+            class="order-1 sm:order-2"
+          />
+          <img
+            @click="navOpen = !navOpen"
+            src="../public/assets/toggle.svg"
+            alt=""
+            class="lg:hidden order-2 sm:order-1"
+          />
+          <div class="order-2 hidden lg:block">
+            <ul class="flex gap-16">
+              <li class="text-grey font-bold text-sm font-circular">
+                <a href="">Home</a>
+              </li>
+              <li
+                class="text-grey font-normal text-sm font-circular opacity-50"
+              >
+                <a href="">Discover</a>
+              </li>
+              <li
+                class="text-grey font-normal text-sm font-circular opacity-50"
+              >
+                <a href="">Special Deals</a>
+              </li>
+              <li
+                class="text-grey font-normal text-sm font-circular opacity-50"
+              >
+                <a href="">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="order-3 hidden sm:block">
+            <button
+              class="grow bg-white px-8 py-4 font-bold text-grey rounded-full text-sm"
+            >
+              Login
+            </button>
+            <button
+              class="grow bg-ungu px-8 py-4 font-bold text-white rounded-full text-sm"
+            >
+              Sign up
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        x-show="navOpen"
+        x-data="{open : false}"
+        class="fixed bottom-0 right-0 left-0 p-4 bg-white border lg:hidden"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+      >
+        <ul class="flex justify-between">
+          <li>
+            <button class="flex justify-center flex-col items-center gap-1">
+              <ion-icon
+                name="home-outline"
+                class="text-2xl text-ungu"
+              ></ion-icon>
+              <span class="text-ungu text-base font-bold">Home</span>
+            </button>
+          </li>
+          <li>
+            <button class="flex justify-center flex-col items-center gap-1">
+              <ion-icon
+                name="search-outline"
+                class="text-grey opacity-50 text-2xl"
+              ></ion-icon>
+              <span class="text-grey opacity-50 text-base font-normal"
+                >Discover</span
+              >
+            </button>
+          </li>
+          <li>
+            <button class="flex justify-center flex-col items-center gap-1">
+              <ion-icon
+                name="gift-outline"
+                class="text-grey opacity-50 text-2xl"
+              ></ion-icon>
+              <span class="text-grey opacity-50 text-base font-normal"
+                >Special Deals</span
+              >
+            </button>
+          </li>
+          <li>
+            <button class="flex justify-center flex-col items-center gap-1">
+              <ion-icon
+                name="call-outline"
+                class="text-grey opacity-50 text-2xl"
+              ></ion-icon>
+              <span class="text-grey opacity-50 text-base font-normal"
+                >Contact</span
+              >
+            </button>
+          </li>
+          <li>
+            <button
+              @click="open = !open"
+              class="flex justify-center flex-col items-center gap-1"
+            >
+              <ion-icon
+                name="ellipsis-horizontal-circle-outline"
+                class="text-grey opacity-50 text-2xl"
+              ></ion-icon>
+              <span class="text-grey opacity-50 text-base font-normal"
+                >More</span
+              >
+            </button>
+          </li>
+        </ul>
+        <div
+          x-show="open"
+          class="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-4 w-3/4"
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 scale-90"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-300"
+          x-transition:leave-start="opacity-100 scale-100"
+          x-transition:leave-end="opacity-0 scale-90"
+        >
+          <button
+            class="grow bg-white px-8 py-4 font-bold text-grey rounded-full text-sm"
+          >
+            Login
+          </button>
+          <button
+            class="grow bg-ungu px-8 py-4 font-bold text-white rounded-full text-sm"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </nav>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
   </body>
 </html>
