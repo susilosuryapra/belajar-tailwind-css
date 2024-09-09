@@ -5,8 +5,8 @@
 @layer base {
   /* menambahkan font local custom  */
   @font-face {
-    font-family: "Circular STD";
-    src: url("../public/font/Circular\ Std\ Bold.woff") format("woff");
+    font-family: "Circular-STD";
+    src: url("../public/fonts/Circular-Std-Bold.woff") format("woff");
   }
 
   /* apapun dalam tag html akan punya font family inter */
@@ -16,7 +16,7 @@
 
   /* tag h1 akan memiliki font family circular STD mengoverwrite styling tag html */
   h1 {
-    font-family: Circular STD;
+    font-family: Circular-STD;
   }
 }
 

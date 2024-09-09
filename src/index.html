@@ -20,7 +20,8 @@
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body>
-    <nav class="py-9 px-4" x-data="{navOpen : false}">
+    <!-- Navigation -->
+    <nav class="py-9 px-4 lg:mx-32" x-data="{navOpen : false}">
       <div class="container mx-auto">
         <div class="flex items-center justify-between">
           <img
@@ -73,7 +74,7 @@
       <div
         x-show="navOpen"
         x-data="{open : false}"
-        class="fixed bottom-0 right-0 left-0 p-4 bg-white border lg:hidden"
+        class="z-50 fixed bottom-0 right-0 left-0 p-4 bg-white border lg:hidden"
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 scale-90"
         x-transition:enter-end="opacity-100 scale-100"
@@ -162,6 +163,58 @@
         </div>
       </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="lg:mx-32">
+      <div class="container px-4 py-4 lg:py-16 mx-auto">
+        <div class="grid grid-cols-12 items-center">
+          <div class="col-span-12 lg:col-span-4 order-2 lg:order-1">
+            <div>
+              <button
+                class="px-8 py-4 bg-white text-pink flex gap-2 text-sm font-bold drop-shadow-sm-shadow rounded-full mx-auto lg:mx-0"
+              >
+                Explore the world!
+                <img src="../public/assets/icon/work.svg" alt="" />
+              </button>
+              <h1
+                class="mt-4 mb-6 md:mb-[43px] md:mt-[43px] lg:text-[69px] font-bold text-[40px] md:text-[56px] text-grey leading-tight text-center lg:text-start"
+              >
+                Travel <span class="text-pink">top destination</span> of the
+                world!
+              </h1>
+              <p
+                class="mb-8 md:mb-[43px] text-center lg:text-start md:text-[18px] text-grey opacity-50 text-base md:w-3/4 lg:w-full mx-auto"
+              >
+                We always make our customer happy by providing as many choices
+                as possible
+              </p>
+              <div
+                class="flex flex-col md:flex-row justify-center gap-6 lg:justify-start"
+              >
+                <button
+                  class="py-6 px-8 bg-ungu drop-shadow-lg-shadow text-white rounded-full text-sm font-bold"
+                >
+                  Get Started
+                </button>
+                <button
+                  class="justify-center items-center z-10 flex gap-2 py-6 px-8 bg-white border border-[#EEEEEE] text-grey rounded-full text-sm font-bold"
+                >
+                  <img src="../public/assets/icon/play.svg" alt="" />
+                  Watch Demo
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-8 order-1 lg:order-2">
+            <div>
+              <img src="../public/assets/hero.png" class="w-full" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IonIcon -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
